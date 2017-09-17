@@ -1,27 +1,27 @@
-### Purpose
-
-This package provides a mechanism to access the Azure Endpoints in different Azure clouds. It also provides a mechanism to add a custom environment.
+An isomorphic javascript library with typescript type definitions that provides a mechanism to access Azure Endpoints in different Azure clouds. It also provides a mechanism to add a custom environment.
 
 ### Example
 
 ```javascript
-import {AzureEnvironment, AzureEnvironmentParameters } from 'ms-rest-azure-env';
+import {AzureEnvironment, AzureEnvironmentParameters } from "ms-rest-azure-env";
 
+// Accesing predefined environment endpoints.
 console.log(AzureEnvironment.Azure.resourceManagerEndpointUrl);
 console.log(AzureEnvironment.AzureChina.resourceManagerEndpointUrl);
 
+//Adding a custom environment with required endpoint values.
 let df: AzureEnvironmentParameters = {
-  name: 'Dogfood',
-  portalUrl: 'http://go.microsoft.com/fwlink/?LinkId=254433',
-  managementEndpointUrl: 'https://management.core.windows.net',
-  resourceManagerEndpointUrl: 'https://management.azure.com/',
-  activeDirectoryEndpointUrl: 'https://login.microsoftonline.com/',
-  activeDirectoryResourceId: 'https://management.core.windows.net/'
+  name: "Dogfood",
+  portalUrl: "http://go.microsoft.com/fwlink/?LinkId=254433",
+  managementEndpointUrl: "https://management.core.windows.net",
+  resourceManagerEndpointUrl: "https://management.azure.com/",
+  activeDirectoryEndpointUrl: "https://login.microsoftonline.com/",
+  activeDirectoryResourceId: "https://management.core.windows.net/"
 };
 AzureEnvironment.add(df);
-let dfoodEnv = AzureEnvironment.get('Dogfood');
+let dfoodEnv = AzureEnvironment.get("Dogfood");
 console.log(dfoodEnv);
-console.log(`Accessing the custom environment info: ${(<any>AzureEnvironment)['Dogfood'].managementEndpointUrl}`);
+console.log(`Accessing the custom environment info: ${(<any>AzureEnvironment)["Dogfood"].managementEndpointUrl}`);
 ```
 
 ### Contributing

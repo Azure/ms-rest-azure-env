@@ -3,23 +3,23 @@
   "author": {
     "name": "Microsoft Corporation",
     "email": "azsdkteam@microsoft.com",
-    "url": "https://github.com/Azure/azure-sdk-for-node"
+    "url": "https://github.com/Azure/ms-rest-azure-env"
   },
   "version": "0.1.0",
-  "description": "Azure endpoints for different Azure Environments/Clouds.",
+  "description": "Isomorphic library that provides Azure endpoints for different Azure Environments/Clouds.",
   "tags": [
     "node",
     "isomorphic",
-    "microsoft",
-    "autorest",
-    "environment"
+    "azure",
+    "environment",
+    "endpoint"
   ],
   "keywords": [
     "node",
     "isomorphic",
-    "microsoft",
-    "autorest",
-    "environment"
+    "azure",
+    "environment",
+    "endpoint"
   ],
   "main": "./dist/lib/azureEnvironment.js",
   "types": "./typings/lib/azureEnvironment.d.ts",
@@ -27,26 +27,27 @@
   "devDependencies": {
     "@types/mocha": "^2.2.40",
     "@types/should": "^8.1.30",
-    "mocha": "^3.2.0",
+    "mocha": "^3.5.3",
     "should": "5.2.0",
-    "ts-loader": "^2.3.4",
-    "tslint": "^5.2.0",
+    "ts-loader": "^2.3.7",
+    "tslint": "^5.7.0",
     "typescript": "^2.5.2",
-    "webpack": "^3.5.5",
-    "uglify-es": "^3.0.28"
+    "webpack": "^3.6.0",
+    "uglify-es": "^3.1.0"
   },
-  "homepage": "https://github.com/Azure/azure-sdk-for-node/runtime/ms-rest",
+  "homepage": "https://github.com/Azure/ms-rest-azure-env",
   "repository": {
     "type": "git",
-    "url": "git@github.com:Azure/azure-sdk-for-node.git"
+    "url": "git@github.com:Azure/ms-rest-azure-env.git"
   },
   "bugs": {
-    "url": "http://github.com/Azure/azure-sdk-for-node/issues"
+    "url": "http://github.com/Azure/ms-rest-azure-env/issues"
   },
   "scripts": {
     "tsc": "tsc -p tsconfig.json",
-    "test": "npm install && npm -s run-script unit",
+    "test": "npm -s run-script tslint && npm -s run-script unit",
     "unit": "mocha -t 50000 dist/test",
-    "build": "npm -s run-script tsc && webpack && node node_modules/uglify-es/bin/uglifyjs --source-map -c -m -o azureEnvironmentBundle.min.js azureEnvironmentBundle.js"
+    "build": "npm -s run-script tsc && webpack && node node_modules/uglify-es/bin/uglifyjs --source-map -c -m -o azureEnvironmentBundle.min.js azureEnvironmentBundle.js",
+    "tslint": "tslint -p . -c tslint.json --exclude test/**/*.ts"
   }
 }

@@ -33,7 +33,7 @@ describe('AzureEnvironment', function () {
   it('should show the details of Azure USGovernment environment correctly', function (done) {
     let tempEnv = AzureEnvironment.AzureUSGovernment;
     tempEnv.name.should.equal('AzureUSGovernment');
-    tempEnv.activeDirectoryEndpointUrl.should.equal('https://login.microsoftonline.com/');
+    tempEnv.activeDirectoryEndpointUrl.should.equal('https://login-us.microsoftonline.com/');
     tempEnv.activeDirectoryResourceId.should.equal('https://management.core.usgovcloudapi.net/');
     tempEnv.managementEndpointUrl.should.equal('https://management.core.usgovcloudapi.net');
     tempEnv.resourceManagerEndpointUrl.should.equal('https://management.usgovcloudapi.net');
