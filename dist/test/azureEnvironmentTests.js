@@ -8,6 +8,7 @@ describe('AzureEnvironment', function () {
     it('should show the details of Azure Production environment correctly', function (done) {
         let tempEnv = azureEnvironment_1.AzureEnvironment.Azure;
         tempEnv.name.should.equal('Azure');
+        tempEnv.batchResourceId.should.equal('https://batch.core.windows.net/');
         tempEnv.activeDirectoryEndpointUrl.should.equal('https://login.microsoftonline.com/');
         tempEnv.activeDirectoryResourceId.should.equal('https://management.core.windows.net/');
         tempEnv.managementEndpointUrl.should.equal('https://management.core.windows.net');
@@ -19,6 +20,7 @@ describe('AzureEnvironment', function () {
     it('should show the details of Azure China environment correctly', function (done) {
         let tempEnv = azureEnvironment_1.AzureEnvironment.AzureChina;
         tempEnv.name.should.equal('AzureChina');
+        tempEnv.batchResourceId.should.equal('https://batch.chinacloudapi.cn/');
         tempEnv.activeDirectoryEndpointUrl.should.equal('https://login.chinacloudapi.cn/');
         tempEnv.activeDirectoryResourceId.should.equal('https://management.core.chinacloudapi.cn/');
         tempEnv.managementEndpointUrl.should.equal('https://management.core.chinacloudapi.cn');
@@ -30,6 +32,7 @@ describe('AzureEnvironment', function () {
     it('should show the details of Azure USGovernment environment correctly', function (done) {
         let tempEnv = azureEnvironment_1.AzureEnvironment.AzureUSGovernment;
         tempEnv.name.should.equal('AzureUSGovernment');
+        tempEnv.batchResourceId.should.equal('https://batch.core.usgovcloudapi.net/');
         tempEnv.activeDirectoryEndpointUrl.should.equal('https://login-us.microsoftonline.com/');
         tempEnv.activeDirectoryResourceId.should.equal('https://management.core.usgovcloudapi.net/');
         tempEnv.managementEndpointUrl.should.equal('https://management.core.usgovcloudapi.net');
@@ -41,6 +44,7 @@ describe('AzureEnvironment', function () {
     it('should show the details of Azure GermanCloud environment correctly', function (done) {
         let tempEnv = azureEnvironment_1.AzureEnvironment.AzureGermanCloud;
         tempEnv.name.should.equal('AzureGermanCloud');
+        tempEnv.batchResourceId.should.equal('https://batch.microsoftazure.de/');
         tempEnv.activeDirectoryEndpointUrl.should.equal('https://login.microsoftonline.de/');
         tempEnv.activeDirectoryResourceId.should.equal('https://management.core.cloudapi.de/');
         tempEnv.managementEndpointUrl.should.equal('https://management.core.cloudapi.de');

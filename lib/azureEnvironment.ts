@@ -138,7 +138,7 @@ export class AzureEnvironment {
    * The template gallery endpoint.
    */
   readonly galleryEndpointUrl?: string;
-  
+
   /**
    * The batch resource ID.
    */

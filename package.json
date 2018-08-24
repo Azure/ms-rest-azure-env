@@ -31,8 +31,8 @@
     "should": "5.2.0",
     "ts-loader": "^2.3.7",
     "tslint": "^5.7.0",
-    "typescript": "^2.5.2",
-    "webpack": "^3.6.0",
+    "typescript": "^3.0.1",
+    "webpack": "^4.17.1",
     "uglify-es": "^3.1.0"
   },
   "homepage": "https://github.com/Azure/ms-rest-azure-env",
@@ -48,6 +48,7 @@
     "test": "npm -s run-script tslint && npm -s run-script unit",
     "unit": "mocha -t 50000 dist/test",
     "build": "npm -s run-script tsc && webpack && node node_modules/uglify-es/bin/uglifyjs --source-map -c -m -o azureEnvironmentBundle.min.js azureEnvironmentBundle.js",
-    "tslint": "tslint -p . -c tslint.json --exclude test/**/*.ts"
+    "tslint": "tslint -p . -c tslint.json --exclude test/**/*.ts",
+    "prepare": "npm run build"
   }
 }
