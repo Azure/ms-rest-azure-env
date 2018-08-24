@@ -54,3 +54,12 @@ jspm_packages/
 # dotenv environment variables file
 .env
 
+*.suo
+*.user
+.ntvs_analysis.dat
+obj/*
+typings/
+dist/
+output/
+typedoc
+

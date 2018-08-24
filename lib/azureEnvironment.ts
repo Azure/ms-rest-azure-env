@@ -140,6 +140,11 @@ export class AzureEnvironment {
   readonly galleryEndpointUrl?: string;
 
   /**
+   * The batch resource ID.
+   */
+  readonly batchResourceId?: string;
+
+  /**
    * The Active Directory resource ID.
    */
   readonly activeDirectoryGraphResourceId?: string;
@@ -220,6 +225,7 @@ export class AzureEnvironment {
     activeDirectoryEndpointUrl: "https://login.microsoftonline.com/",
     activeDirectoryResourceId: "https://management.core.windows.net/",
     activeDirectoryGraphResourceId: "https://graph.windows.net/",
+    batchResourceId: "https://batch.core.windows.net/",
     activeDirectoryGraphApiVersion: "2013-04-05",
     storageEndpointSuffix: ".core.windows.net",
     keyVaultDnsSuffix: ".vault.azure.net",
@@ -240,6 +246,7 @@ export class AzureEnvironment {
     activeDirectoryResourceId: "https://management.core.chinacloudapi.cn/",
     activeDirectoryGraphResourceId: "https://graph.chinacloudapi.cn/",
     activeDirectoryGraphApiVersion: "2013-04-05",
+    batchResourceId: "https://batch.chinacloudapi.cn/",
     storageEndpointSuffix: ".core.chinacloudapi.cn",
     keyVaultDnsSuffix: ".vault.azure.cn",
     // TODO: add dns suffixes for the china cloud for datalake store and datalake analytics once they are defined.
@@ -259,6 +266,7 @@ export class AzureEnvironment {
     activeDirectoryEndpointUrl: "https://login-us.microsoftonline.com/",
     activeDirectoryResourceId: "https://management.core.usgovcloudapi.net/",
     activeDirectoryGraphResourceId: "https://graph.windows.net/",
+    batchResourceId: "https://batch.core.usgovcloudapi.net/",
     activeDirectoryGraphApiVersion: "2013-04-05",
     storageEndpointSuffix: ".core.usgovcloudapi.net",
     keyVaultDnsSuffix: ".vault.usgovcloudapi.net",
@@ -278,6 +286,7 @@ export class AzureEnvironment {
     activeDirectoryEndpointUrl: "https://login.microsoftonline.de/",
     activeDirectoryResourceId: "https://management.core.cloudapi.de/",
     activeDirectoryGraphResourceId: "https://graph.cloudapi.de/",
+    batchResourceId: "https://batch.microsoftazure.de/",
     activeDirectoryGraphApiVersion: "2013-04-05",
     storageEndpointSuffix: ".core.cloudapi.de",
     keyVaultDnsSuffix: ".vault.microsoftazure.de",

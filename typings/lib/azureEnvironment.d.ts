@@ -110,6 +110,10 @@ export declare class AzureEnvironment {
      */
     readonly galleryEndpointUrl?: string;
     /**
+     * The batch resource ID.
+     */
+    readonly batchResourceId?: string;
+    /**
      * The Active Directory resource ID.
      */
     readonly activeDirectoryGraphResourceId?: string;
@@ -152,6 +156,7 @@ export declare class AzureEnvironment {
         activeDirectoryEndpointUrl: string;
         activeDirectoryResourceId: string;
         activeDirectoryGraphResourceId: string;
+        batchResourceId: string;
         activeDirectoryGraphApiVersion: string;
         storageEndpointSuffix: string;
         keyVaultDnsSuffix: string;
@@ -172,6 +177,7 @@ export declare class AzureEnvironment {
         activeDirectoryResourceId: string;
         activeDirectoryGraphResourceId: string;
         activeDirectoryGraphApiVersion: string;
+        batchResourceId: string;
         storageEndpointSuffix: string;
         keyVaultDnsSuffix: string;
         azureDataLakeStoreFileSystemEndpointSuffix: string;
@@ -190,6 +196,7 @@ export declare class AzureEnvironment {
         activeDirectoryEndpointUrl: string;
         activeDirectoryResourceId: string;
         activeDirectoryGraphResourceId: string;
+        batchResourceId: string;
         activeDirectoryGraphApiVersion: string;
         storageEndpointSuffix: string;
         keyVaultDnsSuffix: string;
@@ -209,6 +216,7 @@ export declare class AzureEnvironment {
         activeDirectoryEndpointUrl: string;
         activeDirectoryResourceId: string;
         activeDirectoryGraphResourceId: string;
+        batchResourceId: string;
         activeDirectoryGraphApiVersion: string;
         storageEndpointSuffix: string;
         keyVaultDnsSuffix: string;
