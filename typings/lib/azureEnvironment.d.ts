@@ -44,6 +44,10 @@ export interface AzureEnvironmentParameters {
      */
     readonly activeDirectoryGraphResourceId?: string;
     /**
+     * The batch resource ID.
+     */
+    readonly batchResourceId?: string;
+    /**
      * The Active Directory api version.
      */
     readonly activeDirectoryGraphApiVersion?: string;
@@ -140,7 +144,7 @@ export declare class AzureEnvironment {
     /**
      * Determines whether the authentication endpoint should be validated with Azure AD. Default value is true.
      */
-    readonly validateAuthority?: boolean;
+    readonly validateAuthority: boolean;
     constructor(parameters: AzureEnvironmentParameters);
     static add(parameters: AzureEnvironmentParameters): void;
     static get(name: string): AzureEnvironment;
