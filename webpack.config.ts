@@ -1,7 +1,7 @@
-const webpack = require('webpack');
-const path = require('path');
+import * as webpack from 'webpack';
 
-module.exports = {
+const config: webpack.Configuration = {
+  mode: "production",
   entry: './lib/azureEnvironment.ts',
   devtool: 'source-map',
   output: {
@@ -30,6 +30,10 @@ module.exports = {
     tls: false,
     tty: false,
     v8: false,
-    Buffer: false
+    Buffer: false,
+    process: false,
+    stream: false
   }
 };
+
+export = config;

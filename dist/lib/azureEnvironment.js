@@ -4,21 +4,59 @@
 Object.defineProperty(exports, "__esModule", { value: true });
 class AzureEnvironment {
     constructor(parameters) {
-        // set default
+        /**
+         * Determines whether the authentication endpoint should be validated with Azure AD. Default value is true.
+         */
         this.validateAuthority = true;
-        if (parameters) {
-            // Validate required parameters
-            const requiredParams = ["name", "portalUrl", "managementEndpointUrl", "resourceManagerEndpointUrl",
-                "activeDirectoryEndpointUrl", "activeDirectoryResourceId"];
-            requiredParams.forEach(function (param) {
-                if (!parameters[param] || typeof parameters[param].valueOf() !== "string") {
-                    throw new Error(`Please provide "${param}" for the environment and it must be of type "string".`);
-                }
-            });
-            // Assign provided parameters
-            for (const prop in parameters) {
-                this[prop] = parameters[prop];
+        if (!parameters || typeof parameters !== "object") {
+            throw new Error("'parameters' is a required parameter and must be of type 'object'.");
+        }
+        // Validate required parameters
+        const requiredParams = ["name", "portalUrl", "managementEndpointUrl", "resourceManagerEndpointUrl",
+            "activeDirectoryEndpointUrl", "activeDirectoryResourceId"];
+        requiredParams.forEach(function (param) {
+            if (!parameters[param] || typeof parameters[param].valueOf() !== "string") {
+                throw new Error(`Please provide "${param}" for the environment and it must be of type "string".`);
             }
+        });
+        this.name = parameters.name;
+        this.portalUrl = parameters.portalUrl;
+        this.managementEndpointUrl = parameters.managementEndpointUrl;
+        this.resourceManagerEndpointUrl = parameters.resourceManagerEndpointUrl;
+        this.activeDirectoryEndpointUrl = parameters.activeDirectoryEndpointUrl;
+        this.activeDirectoryResourceId = parameters.activeDirectoryResourceId;
+        if (this.activeDirectoryGraphApiVersion) {
+            this.activeDirectoryGraphApiVersion = parameters.activeDirectoryGraphApiVersion;
+        }
+        if (this.activeDirectoryGraphResourceId) {
+            this.activeDirectoryGraphResourceId = parameters.activeDirectoryGraphResourceId;
+        }
+        if (this.azureDataLakeAnalyticsCatalogAndJobEndpointSuffix) {
+            this.azureDataLakeAnalyticsCatalogAndJobEndpointSuffix = parameters.azureDataLakeAnalyticsCatalogAndJobEndpointSuffix;
+        }
+        if (this.azureDataLakeStoreFileSystemEndpointSuffix) {
+            this.azureDataLakeStoreFileSystemEndpointSuffix = parameters.azureDataLakeStoreFileSystemEndpointSuffix;
+        }
+        if (this.batchResourceId) {
+            this.batchResourceId = parameters.batchResourceId;
+        }
+        if (this.galleryEndpointUrl) {
+            this.galleryEndpointUrl = parameters.galleryEndpointUrl;
+        }
+        if (this.keyVaultDnsSuffix) {
+            this.keyVaultDnsSuffix = parameters.keyVaultDnsSuffix;
+        }
+        if (this.publishingProfileUrl) {
+            this.publishingProfileUrl = parameters.publishingProfileUrl;
+        }
+        if (this.sqlManagementEndpointUrl) {
+            this.sqlManagementEndpointUrl = parameters.sqlManagementEndpointUrl;
+        }
+        if (this.sqlServerHostnameSuffix) {
+            this.sqlServerHostnameSuffix = parameters.sqlServerHostnameSuffix;
+        }
+        if (this.storageEndpointSuffix) {
+            this.storageEndpointSuffix = parameters.storageEndpointSuffix;
         }
     }
     static add(parameters) {
