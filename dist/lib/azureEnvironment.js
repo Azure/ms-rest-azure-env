@@ -123,7 +123,7 @@ AzureEnvironment.AzureUSGovernment = {
     sqlManagementEndpointUrl: "https://management.core.usgovcloudapi.net:8443/",
     sqlServerHostnameSuffix: ".database.usgovcloudapi.net",
     galleryEndpointUrl: "https://gallery.usgovcloudapi.net/",
-    activeDirectoryEndpointUrl: "https://login-us.microsoftonline.com/",
+    activeDirectoryEndpointUrl: "https://login.microsoftonline.us/",
     activeDirectoryResourceId: "https://management.core.usgovcloudapi.net/",
     activeDirectoryGraphResourceId: "https://graph.windows.net/",
     batchResourceId: "https://batch.core.usgovcloudapi.net/",
