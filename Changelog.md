@@ -1,3 +1,6 @@
+### 0.1.2 - 2018/08/28
+- Update ActiveDirectory endpoint URL in US Government cloud
+
 ### 0.1.1 - 2018/08/24
 - added batchResourceId to the supported environments
 

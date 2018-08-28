@@ -5,7 +5,7 @@
     "email": "azsdkteam@microsoft.com",
     "url": "https://github.com/Azure/ms-rest-azure-env"
   },
-  "version": "0.1.1",
+  "version": "0.1.2",
   "description": "Isomorphic library that provides Azure endpoints for different Azure Environments/Clouds.",
   "tags": [
     "node",
