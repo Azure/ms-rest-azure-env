@@ -3,11 +3,11 @@ An isomorphic javascript library with typescript type definitions that provides 
 ### Example
 
 ```javascript
-import {AzureEnvironment, AzureEnvironmentParameters } from "ms-rest-azure-env";
+import { Environment, EnvironmentParameters } from "ms-rest-azure-env";
 
 // Accesing predefined environment endpoints.
-console.log(AzureEnvironment.Azure.resourceManagerEndpointUrl);
-console.log(AzureEnvironment.AzureChina.resourceManagerEndpointUrl);
+console.log(Environment.AzureCloud.resourceManagerEndpointUrl);
+console.log(Environment.ChinaCloud.resourceManagerEndpointUrl);
 
 //Adding a custom environment with required endpoint values.
 let df: AzureEnvironmentParameters = {
@@ -18,10 +18,10 @@ let df: AzureEnvironmentParameters = {
   activeDirectoryEndpointUrl: "https://login.microsoftonline.com/",
   activeDirectoryResourceId: "https://management.core.windows.net/"
 };
-AzureEnvironment.add(df);
-let dfoodEnv = AzureEnvironment.get("Dogfood");
+Environment.add(df);
+let dfoodEnv = Environment.get("Dogfood");
 console.log(dfoodEnv);
-console.log(`Accessing the custom environment info: ${(<any>AzureEnvironment)["Dogfood"].managementEndpointUrl}`);
+console.log(`Accessing the custom environment info: ${(<any>Environment)["Dogfood"].managementEndpointUrl}`);
 ```
 
 ### Contributing

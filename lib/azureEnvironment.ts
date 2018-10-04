@@ -1,7 +1,7 @@
 // Copyright (c) Microsoft Corporation. All rights reserved.
 // Licensed under the MIT License. See License.txt in the project root for license information.
 
-export interface AzureEnvironmentParameters {
+export interface EnvironmentParameters {
   /**
    * The Environment name.
    */
@@ -93,7 +93,7 @@ export interface AzureEnvironmentParameters {
   readonly validateAuthority?: boolean;
 }
 
-export class AzureEnvironment {
+export class Environment {
   /**
    * The Environment name.
    */
@@ -184,7 +184,7 @@ export class AzureEnvironment {
    */
   readonly validateAuthority: boolean = true;
 
-  constructor(parameters: AzureEnvironmentParameters) {
+  constructor(parameters: EnvironmentParameters) {
 
     if (!parameters || typeof parameters !== "object") {
       throw new Error("'parameters' is a required parameter and must be of type 'object'.");
@@ -248,23 +248,23 @@ export class AzureEnvironment {
     }
   }
 
-  static add(parameters: AzureEnvironmentParameters): void {
-    const envContainer: { [name: string]: AzureEnvironment } = {};
-    const envObj = new AzureEnvironment(parameters);
+  static add(parameters: EnvironmentParameters): void {
+    const envContainer: { [name: string]: Environment } = {};
+    const envObj = new Environment(parameters);
     envContainer[parameters.name] = envObj;
-    Object.assign(AzureEnvironment, envContainer);
+    Object.assign(Environment, envContainer);
     return;
   }
 
-  static get(name: string): AzureEnvironment {
+  static get(name: string): Environment {
     if (!name) {
       throw new TypeError("name cannot be null or undefined and must be of type string.");
     }
-    return (AzureEnvironment as any)[name];
+    return (Environment as any)[name];
   }
 
-  static readonly Azure = {
-    name: "Azure",
+  static readonly AzureCloud = {
+    name: "AzureCloud",
     portalUrl: "https://portal.azure.com",
     publishingProfileUrl: "https://go.microsoft.com/fwlink/?LinkId=254432",
     managementEndpointUrl: "https://management.core.windows.net",
@@ -283,8 +283,8 @@ export class AzureEnvironment {
     azureDataLakeAnalyticsCatalogAndJobEndpointSuffix: "azuredatalakeanalytics.net",
     validateAuthority: true
   };
-  static readonly AzureChina = {
-    name: "AzureChina",
+  static readonly ChinaCloud = {
+    name: "AzureChinaCloud",
     portalUrl: "https://portal.azure.cn",
     publishingProfileUrl: "https://go.microsoft.com/fwlink/?LinkID=301774",
     managementEndpointUrl: "https://management.core.chinacloudapi.cn",
@@ -304,7 +304,7 @@ export class AzureEnvironment {
     azureDataLakeAnalyticsCatalogAndJobEndpointSuffix: "N/A",
     validateAuthority: true
   };
-  static readonly AzureUSGovernment = {
+  static readonly USGovernment = {
     name: "AzureUSGovernment",
     portalUrl: "https://portal.azure.us",
     publishingProfileUrl: "https://manage.windowsazure.us/publishsettings/index",
@@ -324,7 +324,7 @@ export class AzureEnvironment {
     azureDataLakeAnalyticsCatalogAndJobEndpointSuffix: "N/A",
     validateAuthority: true
   };
-  static readonly AzureGermanCloud = {
+  static readonly GermanCloud = {
     name: "AzureGermanCloud",
     portalUrl: "https://portal.microsoftazure.de/",
     publishingProfileUrl: "https://manage.microsoftazure.de/publishsettings/index",
