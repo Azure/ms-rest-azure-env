@@ -31,7 +31,7 @@ describe("AzureEnvironment", function () {
     tempEnv.validateAuthority.should.equal(true);
     done();
   });
-  Environment
+
   it("should show the details of Azure USGovernment environment correctly", function (done) {
     const tempEnv = Environment.USGovernment;
     tempEnv.name.should.equal("AzureUSGovernment");
@@ -43,7 +43,7 @@ describe("AzureEnvironment", function () {
     tempEnv.portalUrl.should.equal("https://portal.azure.us");
     tempEnv.validateAuthority.should.equal(true);
     done();
-  }); Environment
+  });
 
   it("should show the details of Azure GermanCloud environment correctly", function (done) {
     const tempEnv = Environment.GermanCloud;
@@ -55,7 +55,7 @@ describe("AzureEnvironment", function () {
     tempEnv.resourceManagerEndpointUrl.should.equal("https://management.microsoftazure.de");
     tempEnv.portalUrl.should.equal("https://portal.microsoftazure.de/");
     tempEnv.validateAuthority.should.equal(true);
-    done(); Environment
+    done();
   });
 
   it("should be able to add a new environment", function (done) {
