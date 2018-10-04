@@ -2,13 +2,13 @@
 // Licensed under the MIT License. See License.txt in the project root for license information.
 
 import * as should from "should";
-import { AzureEnvironment, AzureEnvironmentParameters } from "../lib/azureEnvironment";
+import { Environment, EnvironmentParameters } from "../lib/azureEnvironment";
 
 describe("AzureEnvironment", function () {
 
   it("should show the details of Azure Production environment correctly", function (done) {
-    const tempEnv = AzureEnvironment.Azure;
-    tempEnv.name.should.equal("Azure");
+    const tempEnv = Environment.AzureCloud;
+    tempEnv.name.should.equal("AzureCloud");
     tempEnv.batchResourceId.should.equal("https://batch.core.windows.net/");
     tempEnv.activeDirectoryEndpointUrl.should.equal("https://login.microsoftonline.com/");
     tempEnv.activeDirectoryResourceId.should.equal("https://management.core.windows.net/");
@@ -19,9 +19,9 @@ describe("AzureEnvironment", function () {
     done();
   });
 
-  it("should show the details of Azure China environment correctly", function (done) {
-    const tempEnv = AzureEnvironment.AzureChina;
-    tempEnv.name.should.equal("AzureChina");
+  it("should show Environment.ChinaCloud environment correctly", function (done) {
+    const tempEnv = Environment.ChinaCloud;
+    tempEnv.name.should.equal("AzureChinaCloud");
     tempEnv.batchResourceId.should.equal("https://batch.chinacloudapi.cn/");
     tempEnv.activeDirectoryEndpointUrl.should.equal("https://login.chinacloudapi.cn/");
     tempEnv.activeDirectoryResourceId.should.equal("https://management.core.chinacloudapi.cn/");
@@ -31,9 +31,9 @@ describe("AzureEnvironment", function () {
     tempEnv.validateAuthority.should.equal(true);
     done();
   });
-
+  Environment
   it("should show the details of Azure USGovernment environment correctly", function (done) {
-    const tempEnv = AzureEnvironment.AzureUSGovernment;
+    const tempEnv = Environment.USGovernment;
     tempEnv.name.should.equal("AzureUSGovernment");
     tempEnv.batchResourceId.should.equal("https://batch.core.usgovcloudapi.net/");
     tempEnv.activeDirectoryEndpointUrl.should.equal("https://login.microsoftonline.us/");
@@ -43,10 +43,10 @@ describe("AzureEnvironment", function () {
     tempEnv.portalUrl.should.equal("https://portal.azure.us");
     tempEnv.validateAuthority.should.equal(true);
     done();
-  });
+  }); Environment
 
   it("should show the details of Azure GermanCloud environment correctly", function (done) {
-    const tempEnv = AzureEnvironment.AzureGermanCloud;
+    const tempEnv = Environment.GermanCloud;
     tempEnv.name.should.equal("AzureGermanCloud");
     tempEnv.batchResourceId.should.equal("https://batch.microsoftazure.de/");
     tempEnv.activeDirectoryEndpointUrl.should.equal("https://login.microsoftonline.de/");
@@ -55,11 +55,11 @@ describe("AzureEnvironment", function () {
     tempEnv.resourceManagerEndpointUrl.should.equal("https://management.microsoftazure.de");
     tempEnv.portalUrl.should.equal("https://portal.microsoftazure.de/");
     tempEnv.validateAuthority.should.equal(true);
-    done();
+    done(); Environment
   });
 
   it("should be able to add a new environment", function (done) {
-    const df: AzureEnvironmentParameters = {
+    const df: EnvironmentParameters = {
       name: "Dogfood",
       portalUrl: "http://go.microsoft.com/fwlink/?LinkId=254433",
       managementEndpointUrl: "https://management.core.windows.net",
@@ -67,7 +67,7 @@ describe("AzureEnvironment", function () {
       activeDirectoryEndpointUrl: "https://login.microsoftonline.com/",
       activeDirectoryResourceId: "https://management.core.windows.net/"
     };
-    const tempEnv = AzureEnvironment;
+    const tempEnv = Environment;
     tempEnv.add(df);
     const dfood = tempEnv.get(df.name);
     dfood.name.should.equal("Dogfood");
