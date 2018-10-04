@@ -45,7 +45,8 @@
     "should": "5.2.0",
     "ts-node": "^7.0.1",
     "tslint": "^5.11.0",
-    "typescript": "^3.1.1"
+    "typescript": "^3.1.1",
+    "uglify-js": "^3.4.9"
   },
   "homepage": "https://github.com/Azure/ms-rest-azure-env",
   "repository": {
