@@ -63,7 +63,7 @@
     "build:minify": "uglifyjs -c -m --comments --source-map \"content='./dist/msRestAzureEnv.js.map'\" -o ./dist/msRestAzureEnv.min.js ./dist/msRestAzureEnv.js",
     "test": "run-p test:tslint test:unit",
     "test:tslint": "tslint -p . -c tslint.json --exclude test/**/*.ts",
-    "test:unit": "mocha dist/test",
+    "test:unit": "mocha",
     "prepare": "npm run build"
   },
   "sideEffects": false
