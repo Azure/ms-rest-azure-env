@@ -58,8 +58,14 @@ jspm_packages/
 *.user
 .ntvs_analysis.dat
 obj/*
-typings/
-dist/
-output/
-typedoc
 
+# Typescript output
+dist/
+*.d.ts
+*.d.ts.map
+*.js
+*.js.map
+
+# Rollup
+!rollup.config.js
+*stats.html

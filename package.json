@@ -21,21 +21,32 @@
     "environment",
     "endpoint"
   ],
-  "main": "./dist/lib/azureEnvironment.js",
-  "types": "./typings/lib/azureEnvironment.d.ts",
+  "main": "./dist/msRestAzureEnv.js",
+  "module": "./es/lib/azureEnvironment.js",
+  "types": "./es/lib/azureEnvironment.d.ts",
+  "files": [
+    "dist/**/*.js",
+    "dist/**/*.js.map",
+    "es/lib/**/*.js",
+    "es/lib/**/*.js.map",
+    "es/lib/**/*.d.ts",
+    "es/lib/**/*.d.ts.map",
+    "lib/**/*.ts",
+    "LICENSE",
+    "README.md"
+  ],
   "license": "MIT",
   "devDependencies": {
     "@types/mocha": "^2.2.40",
     "@types/should": "^8.1.30",
-    "@types/webpack": "^4.1.3",
     "mocha": "^5.2.0",
+    "npm-run-all": "^4.1.3",
+    "rollup": "^0.66.4",
     "should": "5.2.0",
     "ts-loader": "^4.5.0",
     "ts-node": "^7.0.1",
     "tslint": "^5.11.0",
-    "typescript": "^3.0.1",
-    "webpack": "^4.17.1",
-    "webpack-cli": "^3.1.0"
+    "typescript": "^3.1.1"
   },
   "homepage": "https://github.com/Azure/ms-rest-azure-env",
   "repository": {
@@ -46,11 +57,14 @@
     "url": "http://github.com/Azure/ms-rest-azure-env/issues"
   },
   "scripts": {
-    "tsc": "tsc -p tsconfig.json",
-    "test": "npm -s run-script tslint && npm -s run-script unit",
-    "unit": "mocha -t 50000 dist/test",
-    "build": "npm -s run-script tsc && webpack",
-    "tslint": "tslint -p . -c tslint.json --exclude test/**/*.ts",
+    "build": "run-s build:tsc build:rollup build:minify",
+    "build:tsc": "tsc -p tsconfig.es.json",
+    "build:rollup": "rollup -c rollup.config.js",
+    "build:minify": "uglifyjs -c -m --comments --source-map \"content='./dist/msRestAzureEnv.js.map'\" -o ./dist/msRestAzureEnv.min.js ./dist/msRestAzureEnv.js",
+    "test": "run-p test:tslint test:unit",
+    "test:tslint": "tslint -p . -c tslint.json --exclude test/**/*.ts",
+    "test:unit": "mocha dist/test",
     "prepare": "npm run build"
-  }
+  },
+  "sideEffects": false
 }
