@@ -1,11 +1,11 @@
 {
-  "name": "ms-rest-azure-env",
+  "name": "@azure/ms-rest-azure-env",
   "author": {
     "name": "Microsoft Corporation",
     "email": "azsdkteam@microsoft.com",
     "url": "https://github.com/Azure/ms-rest-azure-env"
   },
-  "version": "1.0.0",
+  "version": "1.1.0",
   "description": "Isomorphic library that provides Azure endpoints for different Azure Environments/Clouds.",
   "tags": [
     "node",
