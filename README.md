@@ -5,7 +5,7 @@ An isomorphic javascript library with typescript type definitions that provides 
 ### Example
 
 ```javascript
-import { Environment, EnvironmentParameters } from "ms-rest-azure-env";
+import { Environment, EnvironmentParameters } from "@azure/ms-rest-azure-env";
 
 // Accesing predefined environment endpoints.
 console.log(Environment.AzureCloud.resourceManagerEndpointUrl);
