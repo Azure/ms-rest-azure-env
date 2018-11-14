@@ -1,3 +1,5 @@
+import sourcemaps from "rollup-plugin-sourcemaps";
+
 const banner = `/** @license ms-rest-azure-env
  * Copyright (c) Microsoft Corporation. All rights reserved.
  * Licensed under the MIT License. See License.txt in the project root for license information.
@@ -16,7 +18,9 @@ const config = {
     sourcemap: true,
     banner
   },
-  plugins: []
+  plugins: [
+    sourcemaps()
+  ]
 }
 
 export default config;
