@@ -1,3 +1,5 @@
+**Note:** This package has been deprecated. new Azure Management SDK package from [Azure SDK for JavaScript](https://github.com/azure/azure-sdk-for-js) now have the cloud settings built-in, [for example](https://github.com/Azure/azure-sdk-for-js/blob/dc5f9743b05ea78f938eba31cbe704150889490c/sdk/sql/arm-sql/src/static-helpers/cloudSettingHelpers.ts).
+
 # ms-rest-azure-env [![Build Status](https://dev.azure.com/azure-public/adx/_apis/build/status/public.Azure.ms-rest-azure-env)](https://dev.azure.com/azure-public/adx/_build/latest?definitionId=7)
 
 An isomorphic javascript library with typescript type definitions that provides a mechanism to access Azure Endpoints in different Azure clouds. It also provides a mechanism to add a custom environment.
